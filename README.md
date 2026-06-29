@@ -86,7 +86,7 @@ VaultForge uses a technique sometimes called **cat-append steganography**:
 | `realpath` (coreutils) | ✅ Required | Path resolution |
 | `awk` | ✅ Required | Progress bars, math, formatting |
 | `openssl` | ✅ Required | AES-256 encryption / decryption |
-| `figlet` | ⭐ Recommended | ASCII-art banners |
+| `figlet` | ✅ Required | ASCII-art banners |
 
 Missing tools are detected automatically on first run, and VaultForge will offer
 to install them for you via whichever package manager it finds.
