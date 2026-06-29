@@ -819,7 +819,7 @@ fi
 if $USE_FIGLET; then
     clear
     echo -e "${cyan}"
-    figlet -f small "MP4V HIDER"
+    figlet -f small "MP4V ENCRYPTOR"
     echo -e "🌐${magenta}Github: github.com/nostafobic-dev/mp4vault ${reset}"
 fi
 
