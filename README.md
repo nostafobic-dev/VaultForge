@@ -29,6 +29,7 @@ no dependencies beyond standard Unix tools, runs on Linux, macOS, and Android (T
 - [Usage](#usage)
 - [Configuration](#configuration)
 - [Security & Limitations](#security--limitations)
+- [Usage Case](#usage-case)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -170,6 +171,63 @@ Default behavior can be changed by editing the config block near the top of
   data than **MP4/MOV** — VaultForge warns you, but MP4/MOV is the safer carrier choice.
 - Use responsibly, and don't rely on this as your only copy of anything important —
   always keep a separate backup of files before hiding them.
+
+## Usage Case
+
+I created this tool out of curiosity, but it quickly became a useful solution for my personal file backup workflow.
+
+The main goal of this project is to provide a free and secure way to backup important files by hiding them inside media files.
+
+You might ask:
+
+«Why hide a file inside a video?»
+
+The reason is an interesting behavior I discovered in Google Photos.
+
+If you append a file to an image or video without encryption and upload it to Google Photos, the extra data may be removed because the service processes the file based on its actual media structure.
+
+However, if the hidden file is encrypted first, Google Photos treats the additional data as part of the media file and keeps it intact.
+
+⚠️ Limitations
+
+There is one major limitation: Google Photos has upload size restrictions for photos and videos.
+
+- 🖼️ Images (".jpg", ".png"): around 500 MB upload limit
+- 🎥 Videos (".mkv"): supports much larger uploads (tested successfully with 10 GB+ files)
+
+Because of this, videos are the preferred container format for this tool.
+
+🚀 Backup Method
+
+For users with unlimited Google Photos storage, this can act as a long-term backup method:
+
+1. Take a normal ".mkv" video file (for example, 1 GB)
+2. Use this tool to encrypt and inject your files into the video
+3. Upload the generated video to Google Photos
+4. When needed, download the video
+5. Use the extraction process to recover your original files
+
+Your files remain hidden inside the video while being stored as a normal media file.
+
+🔐 Why Encryption?
+
+Encryption ensures the hidden data is not detected or removed during upload processing. The encrypted payload becomes indistinguishable from normal binary data attached to the media file.
+
+This makes the method useful for storing:
+
+- Personal backups
+- Archives
+- Important documents
+- Private files
+
+📦 Tested
+
+- ✅ Image/video container method
+- ✅ Encrypted file injection
+- ✅ Extraction after upload/download cycle
+- ✅ Tested with ZIP archives up to 10 GB+
+
+This project is intended as a simple, free backup technique using existing cloud storage.
 
 ## Contributing
 
