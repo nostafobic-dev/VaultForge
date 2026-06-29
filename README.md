@@ -49,18 +49,6 @@ Navigate to [Usage](#usage) and [Usage Case](#usage-case) for more details.
 
 ## Screenshots
 
-### Mode Selection
-
-![Modes](assets/screenshot2.png)
-
-### Mode-1: Hide file
-![Encrypt File](assets/screenshot3.png)
-
-![File Injection](assets/screenshot1.png)
-
-### Mode-2: Extractor/Decryptor
-
-![Extractor](assets/screenshot4.png)
 
 ## How It Works
 
