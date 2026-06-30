@@ -68,14 +68,14 @@ Navigate to [Usage](#usage) and [Usage Case](#usage-case) for more details.
 
 ## How It Works
 
-VaultForge uses a technique sometimes called **cat-append steganography**:
+Mp4Vault uses a technique sometimes called **cat-append steganography**:
 
 1. The payload (your file, optionally encrypted) is appended directly onto the end
    of a carrier video file.
 2. Most video players and parsers stop reading once they reach the end of the
    actual video stream, so the carrier still plays completely normally —
    the extra bytes just ride along, invisible to anything that isn't looking for them.
-3. To get the payload back out, VaultForge needs to know exactly where the
+3. To get the payload back out, Mp4Vault needs to know exactly where the
    original video ended. That number — the carrier's original byte size — is
    your **Offset Key**, and it's printed once, right after you hide a file.
 
@@ -83,7 +83,7 @@ VaultForge uses a technique sometimes called **cat-append steganography**:
 > cryptographic-grade steganography. It doesn't hide data inside the video's
 > pixels or audio samples — it just tacks data onto the end of the file. The file
 > size increases by exactly the payload size, and that's trivially detectable by
-> anyone who checks. Encryption (which VaultForge offers) protects the *contents*
+> anyone who checks. Encryption (which Mp4Vault offers) protects the *contents*
 > if discovered; it does not hide the *fact* that something was appended.
 
 ## Features
@@ -173,8 +173,7 @@ Default behavior can be changed by editing the config block near the top of
 
 | Variable | Default | Description |
 |----------|---------|--------------|
-| `DEFAULT_SCAN_DIR` | `/sdcard` | Folder offered as the default place to scan for files |
-| `DEFAULT_OUTPUT_DIR` | `/sdcard` | Folder offered as the default save location |
+| `CONFIG_FILE` | `${HOME}/.mp4vault.conf` | Saves important info |
 | `ENCRYPT_PAYLOAD` | `true` | Offer AES-256 encryption before hiding by default |
 | `SHOW_SIZES` | `true` | Show file sizes next to filenames in lists |
 | `PAGE_SIZE` | `20` | Files shown per page before pagination |
